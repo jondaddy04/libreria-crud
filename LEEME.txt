@@ -1,0 +1,93 @@
+╔══════════════════════════════════════════════════════════════════╗
+║           SISTEMA CRUD – LIBRERÍA                                ║
+║           Autor: Jonathan Zamora Cruz                            ║
+║           Universidad Bancaria de México – 2026                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️  REQUISITO IMPORTANTE ANTES DE EJECUTAR LA APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Esta aplicación (LibreriaCRUD.exe) se conecta a una base de datos
+MySQL local. Para que funcione correctamente DEBES tener instalado
+y corriendo XAMPP antes de abrirla.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PASOS PARA EJECUTAR LA APP (en orden)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASO 1 – Instalar XAMPP (si no lo tienes)
+  Descárgalo gratis en: https://www.apachefriends.org
+  Instálalo con las opciones por defecto.
+
+PASO 2 – Iniciar MySQL en XAMPP
+  1. Abre XAMPP Control Panel
+  2. Haz clic en START en la fila de MySQL
+  3. Espera a que el botón se ponga en verde
+
+PASO 3 – Importar la base de datos
+  1. Abre tu navegador y entra a: http://localhost/phpmyadmin
+  2. Haz clic en "Importar" en el menú superior
+  3. Selecciona el archivo: database/libreria.sql
+  4. Haz clic en "Continuar"
+  5. Verás la base de datos "libreria_db" creada con 8 libros de ejemplo
+
+PASO 4 – Ejecutar la aplicación
+  Opción A (exe): Abre la carpeta dist/ y ejecuta LibreriaCRUD.exe
+  Opción B (python): Abre una terminal en esta carpeta y ejecuta:
+    pip install customtkinter mysql-connector-python
+    python app.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESTRUCTURA DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+libreria-crud/
+├── app.py                  → Código fuente principal
+├── database.py             → Operaciones CRUD con MySQL
+├── config.py               → Configuración de conexión
+├── tecnologias.txt         → Tecnologías y librerías usadas
+├── LEEME.txt               → Este archivo
+├── database/
+│   └── libreria.sql        → Script para importar la base de datos
+├── dist/
+│   └── LibreriaCRUD.exe    → Aplicación ejecutable para Windows
+└── librerias/
+    └── requirements.txt    → Librerías necesarias para Python
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FUNCIONES DE LA APP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ➕ AGREGAR   → Llena el formulario y presiona "Agregar"
+  👁  VER       → Los libros se muestran en la tabla automáticamente
+  ✏️  EDITAR    → Haz clic en un libro de la tabla, edita el
+                  formulario y presiona "Actualizar"
+  🗑️  ELIMINAR  → Selecciona un libro y presiona "Eliminar"
+  🔍 BUSCAR    → Escribe en el buscador para filtrar en tiempo real
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONFIGURACIÓN DE CONEXIÓN (config.py)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Host     : localhost
+  Puerto   : 3306
+  Usuario  : root
+  Contraseña: (vacía, configuración por defecto de XAMPP)
+  Base de datos: libreria_db
+
+  Si tu MySQL tiene contraseña diferente, edita el archivo
+  config.py antes de ejecutar la app.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROBLEMAS FRECUENTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ❌ "Can't connect to MySQL"
+     → Verifica que MySQL esté iniciado en XAMPP (botón verde)
+
+  ❌ "Unknown database libreria_db"
+     → Importa el archivo database/libreria.sql en phpMyAdmin
+
+  ❌ La app abre y se cierra inmediatamente
+     → MySQL no está corriendo. Inicia XAMPP primero.
