@@ -1,0 +1,90 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        SISTEMA CRUD – LIBRERÍA                                   ║
+║        Autor : Jonathan Zamora Cruz                              ║
+║        Materia: Programación / Bases de Datos                    ║
+║        Universidad Bancaria de México – 2025                     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPCIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Aplicación de escritorio desarrollada en Python que implementa las
+operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre una base
+de datos MySQL para la gestión del inventario de una librería.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECNOLOGÍAS UTILIZADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. LENGUAJE: Python 3.10+
+   - Lenguaje principal de la aplicación.
+   - Sitio: https://www.python.org
+
+2. BASE DE DATOS: MySQL (vía XAMPP)
+   - Sistema gestor de bases de datos relacional.
+   - Se usa XAMPP como entorno local para levantar el servidor MySQL.
+   - Sitio: https://www.apachefriends.org
+
+3. INTERFAZ GRÁFICA: tkinter (módulo estándar de Python)
+   - Módulo nativo de Python para interfaces gráficas.
+   - No requiere instalación adicional.
+   - Usado para el widget Treeview (tabla de datos).
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LIBRERÍAS EXTERNAS (ver carpeta /librerias/requirements.txt)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. customtkinter (v5.2.2)
+   - Extiende tkinter con widgets modernos y soporte para tema oscuro.
+   - Instalación: pip install customtkinter
+   - Sitio: https://github.com/TomSchimansky/CustomTkinter
+
+2. mysql-connector-python (v8.3.0)
+   - Conector oficial de MySQL para Python.
+   - Permite ejecutar consultas SQL desde Python.
+   - Instalación: pip install mysql-connector-python
+   - Sitio: https://dev.mysql.com/doc/connector-python/en/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ESTRUCTURA DEL PROYECTO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+libreria-crud/
+├── app.py              → Interfaz gráfica principal (CustomTkinter)
+├── database.py         → Operaciones CRUD con MySQL
+├── config.py           → Configuración de conexión a la BD
+├── tecnologias.txt     → Este archivo
+├── database/
+│   └── libreria.sql    → Script SQL para crear e importar la BD
+└── librerias/
+    └── requirements.txt → Librerías externas necesarias
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INSTRUCCIONES DE INSTALACIÓN Y USO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASO 1 – Iniciar XAMPP
+  Abre XAMPP y presiona START en el servicio MySQL.
+
+PASO 2 – Importar la base de datos
+  Abre tu navegador y ve a: http://localhost/phpmyadmin
+  Haz clic en "Importar" y selecciona el archivo:
+  database/libreria.sql
+
+PASO 3 – Instalar librerías de Python
+  Abre una terminal (CMD o Git Bash) en la carpeta del proyecto:
+  pip install -r librerias/requirements.txt
+
+PASO 4 – Ejecutar la aplicación
+  python app.py
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FUNCIONALIDADES CRUD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ➕ CREAR   → Llena el formulario y presiona "Agregar"
+  👁  LEER    → Los libros se muestran en la tabla automáticamente
+  ✏️  ACTUALIZAR → Haz clic en un libro, edita el formulario y
+                   presiona "Actualizar"
+  🗑️  ELIMINAR → Selecciona un libro y presiona "Eliminar"
+  🔍 BUSCAR  → Escribe en el buscador para filtrar en tiempo real
